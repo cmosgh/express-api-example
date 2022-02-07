@@ -1,0 +1,9 @@
+.cache
+package-lock.json
+public
+node_modules
+coverage
+.nyc_output
+**/*.scss
+.github
+**/*.md
