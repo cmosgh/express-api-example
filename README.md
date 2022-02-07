@@ -1,6 +1,6 @@
 # Sample express api
 
-Just a sample Express api.
+Just a sample Express api that uses typeorm for its entities and typedi as dependency injection library.
 
 Sample _.env_:
 

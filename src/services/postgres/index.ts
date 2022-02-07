@@ -1,18 +1,21 @@
-import * as defaultEnv from '../../config/env'
-import { Connection, ConnectionOptions, createConnection, useContainer } from 'typeorm'
-import { Container } from 'typeorm-typedi-extensions'
-import { dbConnected } from '../../consts'
-import UserEntity from './entities/UserEntity'
+import * as defaultEnv from "../../config/env";
+import { Connection, ConnectionOptions, createConnection, useContainer } from "typeorm";
+import { Container } from "typeorm-typedi-extensions";
+import { dbConnected } from "../../consts";
+import UserEntity from "./entities/UserEntity";
+import CompanyEntity from "./entities/CompanyEntity";
+import CompanyDetailsEntity from "./entities/CompanyDetailsEntity";
+import MilestoneEntity from "./entities/MilestoneEntity";
 
-export let connection: Connection
+export let connection: Connection;
 
-const entities = [UserEntity]
+const entities = [UserEntity, CompanyEntity, CompanyDetailsEntity, MilestoneEntity];
 
 export const connectToDb = async (): Promise<Connection> => {
-  console.time(dbConnected)
+  console.time(dbConnected);
   if (connection && typeof connection === typeof Connection) {
-    console.timeEnd(dbConnected)
-    return connection
+    console.timeEnd(dbConnected);
+    return connection;
   }
   let connectionConfig: ConnectionOptions = {
     name: 'default',

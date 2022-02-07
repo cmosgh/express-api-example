@@ -3,7 +3,8 @@ import compression from "compression";
 import bodyParser from "body-parser";
 import helmet from "helmet";
 import * as defaultEnv from "../../config/env";
-import { fetchTest, getUsers, healthCheck } from "./routes";
+import { createInvoice, fetchTest, getUsers, healthCheck } from "./routes";
+import { bodyRequired } from "./middlewares";
 
 const app = Express();
 
@@ -21,5 +22,7 @@ app.get(`/.health-check`, healthCheck);
 app.get(`/users/`, getUsers);
 
 app.get("/test/", fetchTest);
+
+app.post("/createInvoice", bodyRequired, createInvoice);
 
 export default app;
