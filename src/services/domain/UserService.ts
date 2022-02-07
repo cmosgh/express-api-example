@@ -4,7 +4,7 @@ import UserRepository from '../postgres/repositories/UserRepository'
 import { FindManyOptions } from 'typeorm/find-options/FindManyOptions'
 import UserEntity from '../postgres/entities/UserEntity'
 
-@Service()
+@Service({ transient: true })
 export default class UserService {
   @InjectRepository()
   private repository: UserRepository

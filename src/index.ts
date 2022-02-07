@@ -1,9 +1,10 @@
-import startServer from './services/express'
+import "reflect-metadata";
+import startServer from "./services/express";
 import { connectToDb } from "./services/postgres";
 
 const main = async () => {
-  await connectToDb()
-  await startServer()
-}
+  await connectToDb();
+  await startServer();
+};
 
-main()
+main();

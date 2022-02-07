@@ -8,7 +8,6 @@ import { clientErrorHandler, errorHandler, routeNotFound } from './middlewares'
 let server: undefined | http.Server
 
 export const startServer = async () => {
-
   // these middlewares always go last
   app.use(routeNotFound)
   app.use(clientErrorHandler)

@@ -13,8 +13,6 @@ export const jobsScheduled = 'JOBS_SCHEDULED'
 export const mongodbConnected = `MONGODB_CONNECTED`
 export const serverReady = `Access graphql playground at: ${defaultEnv.EXPRESS_HOST}:${defaultEnv.EXPRESS_PORT}/graphql`
 
-
-
 // ERRORS
 export const googleTokenUsedTooLate = `Token used too late`
 export const googleCantParseToken = `Can't parse token envelope`
