@@ -16,7 +16,8 @@
   "scripts": {
     "start": "ts-node-dev --respawn src/index.ts",
     "test": "echo 'no tests defined'",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "node --max-old-space-size=8192 ./node_modules/typescript/bin/tsc -b "
   },
   "dependencies": {
     "body-parser": "^1.19.1",
